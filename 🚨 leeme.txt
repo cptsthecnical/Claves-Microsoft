@@ -1,10 +1,17 @@
 # con el programa de massgrave puedo conseguir la clave de Windwos y la product key de Microsoft:
 https://massgrave.dev/
 
+# comando para conseguir la product key de Windows
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform" -Name "BackupProductKeyDefault"
+  # el anterior comando equivale a la siguiente busqueda
+  > regedit
+  > Equipo\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform 
+    > BackupProductKeyDefault
+
 # me fio de este proyecto porque esta subido a GitHub sin reportes de virus,
 # aún así, he conseguido las claves de la siguiente manera:
 #    - He utilizado un laboratorio, es decir una máquina virtual con una red virtual (fuera de mi red), y he lanzado el comando "irm https://get.activated.win | iex" para la instalación de las claves.
-#    - Con un script mio he rescatado la key de Windows y Microsoft.
+#    - Con el comando anterior rescato la key de Windows y Microsoft.
 #    - Las he guardado para utilizarlas como mias directaemnte.
 #    - en mi ordenador personal, en un entorno real, he metido directamente las claves, sin requerir la instalación de massgrave.
 #      + de esta manera me olvido de que me instale el script de massgrave algo por debajo que funcione en segundo plano... etc.
