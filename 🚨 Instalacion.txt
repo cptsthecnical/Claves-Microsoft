@@ -2,12 +2,11 @@
 https://massgrave.dev/
 
 # comando para conseguir la product key de Windows
-Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform" -Name "BackupProductKeyDefault"
-  # el anterior comando equivale a la siguiente busqueda
-  > regedit
-  > Equipo\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform 
-    > BackupProductKeyDefault
+iex (curl.exe -s --doh-url https://1.1.1.1/dns-query https://get.activated.win | Out-String)
+  > 1
+  > 2
 
+# Ccompruebo desde sistema que tenga la clave activada y lo mismo hago desde 
 # me fio de este proyecto porque esta subido a GitHub sin reportes de virus,
 # aún así, he conseguido las claves de la siguiente manera:
 #    - He utilizado un laboratorio, es decir una máquina virtual con una red virtual (fuera de mi red), y he lanzado el comando "irm https://get.activated.win | iex" para la instalación de las claves.
